@@ -1,0 +1,29 @@
+#post-modal.modal.fade(tabindex='-1', role='dialog', aria-labelledby='exampleModalLabel', aria-hidden='true')
+  .modal-dialog(role='document')
+    .modal-content
+      .modal-header
+        img.user-avatar-30.rounded-circle(src="/images/avatars/#{user.avatar}")
+        h5.modal-title.ml-2 Postar
+        button.close(type='button', data-dismiss='modal', aria-label='Close')
+          span(aria-hidden='true') ×
+      .modal-body
+        .post-content-wrapper
+          .form-group.mb-0
+            textarea#post-field.form-control.post-field(placeholder="No que você está pensando?")
+            input#img-data.form-control(type="hidden")
+          .post-upload-thumb-area
+            .image-to-upload-wrapper.position-relative.rounded
+              button.btn-remove-upload-image(type="button") 
+                span.position-relative
+                 span.times &times;
+        small.post-error-area.text-danger
+      .modal-footer.border-top-0.pt-0
+        .col-6.position-relative.uplaod-image-button-area
+          button.btn.btn-link(type="button")
+            span.h3.mb-0
+              i.far.fa-image
+          div.post-image-input-wrapper(data-toggle="tooltip", data-placement="top", title="Add imagem")
+            input#post-image-input(type="file", title=" " accept="image/jpeg, image/png" )
+        .col-6.text-right
+          span.chars-left.d-inline-block.mr-2 240
+          button#post-button.btn.btn-primary.font-weight-bold.btn-pill(type='button' data-loading="Aguarde..." data-text="Postar") Postar

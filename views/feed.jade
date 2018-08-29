@@ -1,0 +1,16 @@
+extends layout
+
+block content
+  - var active = 'feed';
+  include ./components/navbar
+  main.container.h-100.content-wrapper
+    .row.h-100
+        .col-lg-10.col-md-12.mx-auto
+          .row
+            .col-lg-7.px-0.px-lg-3
+              include ./components/post-area
+              include ./components/post-group
+              include ./components/post-modal
+            .col-lg-5
+              include ./components/who-to-follow
+            include ./components/fab

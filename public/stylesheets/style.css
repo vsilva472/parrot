@@ -1,0 +1,360 @@
+html,body {
+  height: 100%;
+  overflow-x: hidden !important; 
+}
+
+.btn-pill {
+  border-radius: 999rem;
+}
+
+body {
+  background: #E6ECF0;
+}
+
+.bg-white {
+  background: #fff;
+}
+
+.content-wrapper {
+  margin-top: 70px;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+@media screen and (max-width: 574px) {
+  body {
+    font-size: .9rem;
+  }
+
+  .nav-items li a {
+    font-size: 1.3rem; 
+  }
+}
+
+/*--------------------------------------
+USER AVATAR
+--------------------------------------*/
+.user-avatar-30 {
+  max-width: 30px;
+}
+.user-avatar-40 {
+  max-width: 40px;
+}
+.user-avatar-50 {
+  max-width: 50px;
+}
+
+/*--------------------------------------
+NAVBAR
+--------------------------------------*/
+.site-navigation {
+  height: 50px;
+  max-height: 50px;
+  border-bottom: 1px solid #ccc;
+  width: 100%;
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+}
+
+@media screen and (max-width: 991px) {
+  
+  body:not(.auth) {
+    padding-top: 90px !important;
+  }
+
+  body.auth {
+    padding-top: 0 !important;
+  }
+
+  .site-navigation {
+    height: 100px;
+    max-height: 120px;
+  }
+
+  .nav-items {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .nav-items li,
+  .nav-items li a {
+    width: 100%;
+    text-align: center;
+    }
+
+    .user-menu {
+      left: 0;
+      z-index: 900
+    }
+
+    .nav-items li a {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 0 !important;
+      height: 100%;
+    }
+  .content-wrapper {
+    margin-top: 0;
+  }
+
+  .post-area {
+    display: none !important;
+  }
+}
+
+/*--------------------------------------
+NAVBAR ITEMS
+--------------------------------------*/
+.nav-items {
+  margin-bottom: 0;
+}
+.nav-items a:hover,
+.nav-items a:active,
+.nav-items a:focus {
+  text-decoration: none;
+}
+.nav-items a {
+  font-size: 1.5rem;
+  padding: 1rem 2rem!important;
+}
+.nav-items li {
+  display: inline-block;
+  height: 100%;
+}
+.nav-items .active {
+  position: relative;
+}
+.nav-items .active a {
+  color: #007bff;
+}
+.nav-items .active::before {
+  content: '';
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: #007bff;
+}
+.nav-items .icon {
+  vertical-align: middle;
+}
+
+/*--------------------------------------
+USER MENU
+--------------------------------------*/
+.user-menu {
+  width: 200px;
+  position: absolute;
+  top: 10px;
+  right: 0;
+  display: none;
+}
+
+.user-menu-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+/*--------------------------------------
+POST AREA COMPONENT
+--------------------------------------*/
+.post-area {
+  font-size: 1.2rem;
+}
+.post-area:focus,
+.post-area:hover {
+  text-decoration: none;
+  outline: none;
+}
+
+textarea.form-control.post-field {
+  border: 0;
+  border-radius: 0;
+  background: #F5F8FA;
+  height: 100px;
+}
+textarea.form-control.post-field:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+.post-content-wrapper {
+  border-bottom: 3px solid #007bff;
+  background: #F5F8FA;
+}
+
+/*--------------------------------------
+WHO TO FOLLOW COMPONENT
+--------------------------------------*/
+.who-to-follow .person-name {
+  margin-bottom: -5px;
+}
+
+/*--------------------------------------
+FAB COMPONENT
+--------------------------------------*/
+
+.fab {
+  bottom: 20px;
+  right: 50%;
+  margin-right: -380px;
+  position: fixed;
+  box-shadow: 1px 2px 2px rgba(0,0,0,.3);
+  z-index: 550;
+}
+
+@media screen and (min-width: 1200px) {
+  .fab {
+    margin-right: -460px;
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .fab {
+    right: 20px;
+    margin-right: 0;
+    width: 60px;
+    height: 60px;
+  }
+}
+
+/*--------------------------------------
+FEED COMPONENT
+--------------------------------------*/
+.feed-post-content img {
+  border: 1px solid #f2f2f2;
+}
+
+.feed .list-group-header {
+  display: none;
+}
+
+/*--------------------------------------
+POST MODAL
+--------------------------------------*/
+.post-image-input-wrapper {
+  position: absolute;
+  overflow: hidden;
+  max-width: 45px;
+  max-height: 30px;
+  background: red;
+  left: 21px;
+  top: 9px;
+  opacity: 0;
+  cursor: pointer;
+}
+.post-image-input-wrapper input {
+  cursor: pointer;
+}
+
+.image-to-upload-wrapper {
+  width: 100px;
+  max-height: 100px;
+  overflow: hidden;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  background: #f2f2f2;
+  margin-left: 10px;
+}
+.btn-remove-upload-image {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  background: #23272B;
+  color: #fff;
+  border: 0;
+  padding: 0;
+  border-radius: 100%;
+  width: 20px;
+  height: 20px;
+  text-align: center;
+  line-height: 100%;
+  cursor: pointer;
+}
+
+.btn-remove-upload-image .times {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  display: block;
+  left:-10px;
+  top: -9px;
+}
+
+/*--------------------------------------
+PROFILE
+--------------------------------------*/
+.profile .fab {
+  display: none;
+}
+
+.card-image-area {
+  max-height: 180px;
+  overflow: hidden;
+}
+
+.profile #modal-edit-profile .user-avatar,
+.profile .profile-header .user-avatar
+{
+  margin-top: -16%; 
+  width: 140px; 
+  height: 140px; 
+  background: #666; 
+  border: 3px solid #fff; 
+  border-radius: 100%; 
+  overflow: hidden;
+}
+
+@media screen and (max-width: 767px) {
+  .profile #modal-edit-profile .user-avatar,
+  .profile .profile-header .user-avatar {
+    width: 80px;
+    height: 80px;
+  }
+}
+
+.select-file {
+  position:absolute; 
+  width: 50px; 
+  height: 50px; 
+  top: 50%; 
+  left: 50%; 
+  margin-top: -25px; 
+  margin-left: -25px;
+  font-size: 1.5em;
+  color: rgba( 255,255,255, .8 );
+  border-radius: 100%;
+  background: rgba(0,0,0,.3);
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.select-file .file {
+  opacity: 0;
+  cursor: pointer;
+  position: absolute;
+}
+
+/*--------------------------------------
+ERROR PAGES
+--------------------------------------*/
+.error-title {
+  font-family: 'arial black', verdana, sans-serif; 
+  font-size: 8rem;
+}
+
+
+@media screen and (max-width: 767px) {
+  .error-title {
+    font-size: 4rem;
+  }
+}

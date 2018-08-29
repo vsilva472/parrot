@@ -1,0 +1,9 @@
+node_modules
+config/config.json
+/public/images/avatars/*
+/public/images/covers/*
+/public/images/posts/*
+
+!/public/images/avatars/default_avatar.png
+!/public/images/covers/default_cover.png
+!/public/images/posts/.gitkepp

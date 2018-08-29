@@ -1,0 +1,18 @@
+extends layout
+
+block content
+  include ./components/navbar
+  main.container.h-100.content-wrapper
+    .row.h-100
+        .col-lg-10.col-md-12.mx-auto
+          .row
+            .col-lg-7.px-0.px-lg-3
+                include  ./components/profile-header
+                include ./components/post-modal
+                include ./components/post-group
+            .col-lg-5
+                include ./components/who-to-follow
+            include ./components/fab
+
+            if (isUserOwnerProfile)
+                include ./components/modal-edit-profile

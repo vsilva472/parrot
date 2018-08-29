@@ -1,0 +1,33 @@
+#modal-edit-profile.modal.fade.mr-sm-0(tabindex='-1', role='dialog', aria-labelledby='modal-edit-profile', aria-hidden='true')
+  .modal-dialog(role='document')
+    .modal-content
+      .modal-header#modal-edit-profile-header
+        h5.modal-title.ml-2 Editar Perfil
+        button.close(type='button', data-dismiss='modal', aria-label='Close')
+          span(aria-hidden='true') ×
+      .card#profile-cover-container.border-0.rounded-0.position-relative.card-image-area
+        img.card-img-top.rounded-0(src="/images/covers/#{user.cover}")
+        div.select-file.text-center.d-flex.align-items-center.justify-content-center(role="button")
+          i.fas.fa-camera
+          input.file(type="file", name="capa", data-img-target="#input-profile-cover", data-img-container="#profile-cover-container")
+      .modal-body
+        .user-avatar.position-relative#profile-avatar-container
+          img(src="/images/avatars/#{user.avatar}", class="img-fluid")
+          div.select-file.text-center.d-flex.align-items-center.justify-content-center(role="button")
+            i.fas.fa-camera
+            input.file(type="file", name="avatar", data-img-target="#input-profile-avatar", data-img-container="#profile-avatar-container")
+        label#lbl-profile-username(for="txtusername") Username
+        .input-group.mb-3
+          .input-group-prepend
+            span.input-group-text @
+          input#txtusername.form-control(type="text", value="#{user.username}")
+        .form-group
+          label(for="txtname") Nome
+          input#txtname.form-control(type="text", value="#{user.name}")
+        .form-group
+          label(for="txtbio") Bio
+          textarea#txtbio.form-control= profile.bio
+        input(type="hidden" id="input-profile-cover")
+        input(type="hidden" id="input-profile-avatar")
+      .modal-footer
+          button#update-profile-button.btn.btn-primary.font-weight-bold.btn-pill.d-inline-block.px-4(type='button' data-loading="Aguarde..." data-text="Salvar") Salvar

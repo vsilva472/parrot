@@ -1,0 +1,42 @@
+- var cssClass = '';
+
+if (!posts.length)
+    - cssClass = 'd-none';
+    
+div(class="list-group mt-md-3 pt-2 pt-lg-0 mb-3 feed-component #{cssClass}")
+    .list-group-item.rounded-0.d-flex.p-3.list-group-header 
+        h5.mb-0 Postagens
+    - var today = moment();
+    for post in posts
+        .list-group-item.rounded-0.d-flex.p-3
+            div
+                img.user-avatar-40.user-avatar.rounded-circle(src="/images/avatars/#{post.owner_avatar}")
+            div.ml-2
+                b.post-user-name #{post.owner_name}
+                span.text-muted.d-inline-block.mx-2.post-user-alias @#{post.owner_alias}
+                span.d-inline-block.mr-2 ·
+                
+                - var postDate = moment(post.createdAt, 'YYYY-MM-DD hh:mm:ss')
+
+                if ( today.format('YY-MM-DD') === postDate.format('YY-MM-DD') )
+                    span.text-muted.post-time= postDate.fromNow()
+                else if ( moment().format('YYYY') == postDate.format('YYYY') )
+                    span.text-muted.text-capitalize.post-time= postDate.format('DD MMM')
+                else 
+                    span.text-muted.text-capitalize.post-time= postDate.format('DD MMM YYYY')
+                
+                p.mb-0.feed-post-content !{post.body}
+
+if ( !posts.length ) 
+    if (isMyFeed)
+        .bg-white.text-center.border.py-5.px-3.mt-2.mb-3.welcome-component.d-flex.align-items-center
+            div
+                h2.font-weight-bold.mt-2.h4 Bem-vindo ao #{app_name}!
+                p Este é o melhor lugar para ver o que está acontecendo no mundo. Encontre algumas pessoas e assuntos para seguir agora.
+                a.btn.btn-primary.btn-pill.font-weight-bold.d-inline-block.px-3(href="/who-to-follow") Vamos lá
+    else 
+        .bg-white.text-center.border.p-3.mt-2.mt-md-3
+            p.text-secondary.h1.mb-0.mt-3 
+                i.far.fa-sad-tear
+            p.my-3 Este é o usuário ainda não fez nenhuma postagem
+        

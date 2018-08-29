@@ -1,0 +1,22 @@
+.list-group.mt-0.pt-2.pt-lg-0.mb-3.notifications-component.h-100
+    - var today = moment();
+    for notification in notifications
+        .list-group-item.rounded-0.d-flex.p-3
+            div
+                img.user-avatar-30.user-avatar(src="#{notification.user_avatar}")
+            div.ml-2
+                b.post-user-name @#{notification.user_alias}
+                span.d-inline-block.mx-2 ·
+                
+                - var notificationDate = moment(notification.createdAt, 'YYYY-MM-DD hh:mm:ss')
+
+                if ( today.format('YY-MM-DD') === notificationDate.format('YY-MM-DD') )
+                    small.text-muted.post-time= notificationDate.fromNow()
+                else if ( moment().format('YYYY') == notificationDate.format('YYYY') )
+                    small.text-muted.text-capitalize.post-time= notificationDate.format('DD MMM')
+                else 
+                    small.text-muted.text-capitalize.post-time= notificationDate.format('DD MMM YYYY')
+                
+                p.mb-0.feed-post-content !{notification.body}
+    if (!notifications.length)
+        .list-group-item.text-center.py-5 Você não possui nenhuma notificação para exibir

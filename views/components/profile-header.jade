@@ -1,0 +1,32 @@
+.card.profile-header.mt-0.mt-md-4.mt-lg-0
+    div.card-image-area.bg-secondary.text-center
+        img.card-img-top.mx-auto(src="/images/covers/#{profile.cover}")
+    .card-body
+        div.position-absolute.text-right.pr-3(style="width:100%; left: 0")
+            if (isUserOwnerProfile)
+                button.btn.btn-pill.btn-outline-primary.px-3.d-inline-block.font-weight-bold(type="button", data-toggle="modal", data-target="#modal-edit-profile", data-backdrop="static", data-keyboard="false") Editar Perfil
+            else
+                if (isFollowedByMe)
+                    button.btn-follow.btn.btn-primary.btn-pill.font-weight-bold.px-3(type="button" data-user_id="#{profile.id}", data-action="unfollow", data-follow="Seguindo", data-unfollow="Seguir") Seguindo
+                else
+                    button.btn-follow.btn.btn-outline-primary.btn-pill.font-weight-bold.px-3(type="button" data-user_id="#{profile.id}", data-action="follow", data-follow="Seguindo", data-unfollow="Seguir") Seguir
+        div
+            .user-avatar
+                img(src="/images/avatars/#{profile.avatar}", class="img-fluid")
+            h5.font-weight-bold.mb-0.mt-3 #{profile.name}
+            div.text-muted @#{profile.username}
+            p.my-2 #{profile.bio}
+            
+            - var dateFormated = moment(profile.createdAt, 'YYYY-MM-DDThh:mm:ss').format('MMMM [de] YYYY')
+
+            p.text-muted.mb-2.mt-3
+                i.far.fa-calendar-alt   
+                span.d-inline-block.ml-2 Entrou em #{dateFormated}
+
+            p.mb-0
+                b.d-inline-block.mr-2 #{profile.following_count}
+                span
+                    a.text-muted(href="/users/1/fulano/following") Seguindo
+                b.d-inline-block.ml-3.mr-1 #{profile.followers_count}
+                span 
+                    a.text-muted(href="/users/1/fulano/followers") Seguidores

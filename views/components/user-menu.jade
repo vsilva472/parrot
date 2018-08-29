@@ -1,0 +1,29 @@
+.bg-white.user-menu.shadow-sm
+    button.btn-link.text-secondary.border-0.user-menu-toggler.user-menu-close.cursor-pointer
+        i.fas.fa-times
+    .p-3
+        img.user-avatar-30.rounded-circle(src="/images/avatars/#{user.avatar}")
+        div.mt-1
+            b #{user.name}
+            div.text-muted @#{user.username}
+        div.mt-3
+            b.d-inline-block.mr-2 #{user.following}
+            small.text-mutend Seguindo
+            b.d-inline-block.mx-2 #{user.followers} 
+            small.text-muted Seguidores
+    .list-group.list-group-flush.border-top-0.mt-1
+        a.list-group-item.list-group-item-action.border-top-0.border-bottom-0(href="/profile/#{user.id}")
+            i.far.fa-user 
+            span.d-inline-block.ml-2 Perfil
+        a.list-group-item.list-group-item-action.border-top-0.border-bottom-0(href="#")
+            i.far.fa-bell
+            span.d-inline-block.ml-2 Notificações
+        //- a.list-group-item.list-group-item-action.border-top-0(href="#")
+        //-     i.far.fa-envelope
+        //-     span.d-inline-block.ml-2 Mensagens
+        a.list-group-item.list-group-item-action.border-top-0(href="#")
+            i.far.fa-bookmark
+            span.d-inline-block.ml-2 Quem seguir
+        a.list-group-item.list-group-item-action.text-right(href="/logout")
+            span.d-inline-block.mr-2 Logout
+            i.fas.fa-door-open.text-muted
