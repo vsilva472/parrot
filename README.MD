@@ -21,6 +21,8 @@ Parrot it's very simple social network created by @vsilva472 with NodeJS and MyS
 6. Finally its time to start the server with the command **$ npm start**
 7. You can access the project on http://localhost:3000
 
+**NOTE** Execute the commands above without the leading "$"
+
 ### Technologies
 This project was written with de following technologies:
 
@@ -39,6 +41,9 @@ This project was written with de following technologies:
    - See others following/followed person
    - When you follow someone by "who to follow sidebar" other suggestions will appear
    - Real time direct messages with sockets
+
+### Note
+The content of views was written in Brazilian Portuguese
 
 ### LICENSE
 MIT
