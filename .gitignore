@@ -6,4 +6,4 @@ config/config.json
 
 !/public/images/avatars/default_avatar.png
 !/public/images/covers/default_cover.png
-!/public/images/posts/.gitkepp
+!/public/images/posts/.gitkeep
