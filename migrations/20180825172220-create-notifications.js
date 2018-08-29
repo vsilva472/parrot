@@ -2,7 +2,7 @@
 
 module.exports = {
   up: (queryInterface, Sequelize) => {
-      return queryInterface.createTable('notifications', 
+      return queryInterface.createTable('Notifications', 
       { 
         id: {
           allowNull: false,

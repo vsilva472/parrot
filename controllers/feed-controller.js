@@ -32,8 +32,10 @@ exports.create = async (req, res, next) => {
     try {
         const filename      = req.session.user.id + '_' + new Date().getTime() + '.png';
         const image         = ImageUploader.uploadFromBinary(req.body.image, filename, 'public/images/posts/');
-        const postBody      = postService.parseBody(req.body.post);
+        const postBody      = req.body.post;
         const user_id       = req.session.user.id;
+
+        console.log( postBody );
 
         const post = await postRepository.create( user_id, postBody, image ? filename : false );
         await userRepository.incrementPostsCount( user_id );

@@ -29,12 +29,12 @@ module.exports = {
       avatar: {
         type: Sequelize.STRING,
         allowNull: false,
-        defaultValue: '/images/avatar.png'
+        defaultValue: 'default_avatar.png'
       },
       cover: {
         type: Sequelize.STRING,
         allowNull: false,
-        defaultValue: '#0084B4'
+        defaultValue: 'default_cover.png'
       },
       posts_count: {
         type: Sequelize.INTEGER,

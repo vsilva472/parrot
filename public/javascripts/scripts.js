@@ -116,7 +116,7 @@
     $( document ).on( 'onPostSuccess', function (e, data) {
         var $feed = $('.feed-component'), $template = $($('#post-item').html());
 
-        $template.find('.user-avatar').attr('src', data.user.avatar);
+        $template.find('.user-avatar').attr('src', '/images/avatars/' + data.user.avatar);
         $template.find('.post-user-name').text(data.user.name);
         $template.find('.post-user-alias').text('@' + data.user.username);
         $template.find('.post-time').text('1 s');
@@ -124,7 +124,7 @@
 
         $feed.removeClass('d-none');
         $template.insertAfter('.list-group-header');
-        $( '.welcome-component' ).hide();
+        $( '.welcome-component' ).remove();
 
     } );
 } (jQuery));

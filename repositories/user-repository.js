@@ -13,7 +13,7 @@ exports.incrementPostsCount = async ( user_id ) => {
 
 exports.getFriendshipSuggestions = async ( user_id, suggestionsCount ) => {
     const suggestions = await models.sequelize.query(
-        "SELECT a.id, a.name, a.username, a.avatar, a.bio, a.following_count, a.followers_count FROM users a LEFT JOIN followers b ON a.id = b.followed_user_id WHERE b.followed_user_id IS NULL AND a.id != ? ORDER BY RAND() LIMIT ?",
+        "SELECT a.id, a.name, a.username, a.avatar, a.bio, a.following_count, a.followers_count FROM Users a LEFT JOIN Followers b ON a.id = b.followed_user_id WHERE b.followed_user_id IS NULL AND a.id != ? ORDER BY RAND() LIMIT ?",
         { 
             replacements: [ user_id, suggestionsCount ],
             type: models.sequelize.QueryTypes.SELECT
@@ -25,7 +25,7 @@ exports.getFriendshipSuggestions = async ( user_id, suggestionsCount ) => {
 
 exports.getFeedData = async ( user_id ) => {
     const feed = await models.sequelize.query(
-        "SELECT u.id, u.avatar as owner_avatar, u.name as owner_name, u.username as owner_alias, u.following_count as owner_following, u.followers_count as owner_followers, p.body, p.createdAt FROM followers as f, posts as p, users as u WHERE p.user_id = f.followed_user_id AND f.follower_user_id = ? AND u.id = f.followed_user_id ORDER BY p.createdAt DESC",
+        "SELECT u.id, u.avatar as owner_avatar, u.name as owner_name, u.username as owner_alias, u.following_count as owner_following, u.followers_count as owner_followers, p.body, p.createdAt FROM Followers as f, Posts as p, Users as u WHERE p.user_id = f.followed_user_id AND f.follower_user_id = ? AND u.id = f.followed_user_id ORDER BY p.createdAt DESC",
         { 
            replacements: [ user_id ],
            type: models.sequelize.QueryTypes.SELECT
