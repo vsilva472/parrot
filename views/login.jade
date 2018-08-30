@@ -5,7 +5,7 @@ block content
     .row.h-100
         .col.bg-light.order-md-2.d-flex.align-items-center.justify-content-center
             div.col-sm-8.col-md-5.col-lg-4.py-3.text-center
-                h1.text-info.mb-4.mb-md-5
+                h1.text-primary.mb-4.mb-md-5
                     span.fas.fa-crow
                     span.sr-only= title
 
@@ -21,6 +21,6 @@ block content
                             input.form-control(type="password", name="password", placeholder="Senha", value="#{data.password}", data-validator="password")
                         div.mb-5
                             input(type="hidden", name="redir", value="#{redir}")
-                            button.btn.btn-info.btn-block(type="submit", data-loading="Aguarde..." data-text="Entrar") Entrar
+                            button.btn.btn-primary.btn-block(type="submit", data-loading="Aguarde..." data-text="Entrar") Entrar
 
                         p.form-text.text-muted #[a(href="/password-recover") Recuperar senha] - #[a(href="/signup") Cadastrar]

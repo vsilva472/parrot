@@ -11,6 +11,7 @@ exports.index = async ( req, res, next ) => {
         res.render( 'who-to-follow', { 
             user        : user,
             title       : 'Quem Seguir', 
+			bodyClass	: 'suggestions',
             content     : suggestions, 
             whoToFollow : whoToFollow
         });

@@ -53,7 +53,7 @@ exports.logout = ( req, res, next ) => {
 }
 
 exports.signupForm = ( req, res, next ) => {
-    res.render('signup', { title: 'Cadastre-se', data: { email: '', password: '', password_conf: '', name: '' } });
+    res.render('signup', { title: 'Cadastre-se', bodyClass: 'auth', data: { email: '', password: '', password_conf: '', name: '' } });
 };
 
 exports.signup = async ( req, res, next ) => {

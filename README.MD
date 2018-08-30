@@ -9,6 +9,8 @@ Parrot it's very simple social network created by @vsilva472 with NodeJS and MyS
   - Upload a cover for your profile (again very simple implementation with pure js)
   - Follow/Unfollow a person
   - See a person profile
+
+**NOTE** A working sample can be found at https://vsilva472-nodejs-parrot.herokuapp.com
  
 ## How to Install
 1. Clone this repository
