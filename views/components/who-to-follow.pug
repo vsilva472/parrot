@@ -1,0 +1,13 @@
+.list-group.who-to-follow.d-none.d-lg-flex
+    div.list-group-item.rounded-0
+        h5.mb-0 Quem seguir
+    for user in whoToFollow
+        .list-group-item.list-group-item-action.d-flex.align-items-center.cursor-pointer(data-navigate=`/profile/${user.id}`)
+            img.user-avatar-40.avatar-popover.rounded-circle(src=`/images/avatars/${user.avatar}`)
+            div.ml-2
+                b.d-block.person-name #{user.name}
+                span.text-muted @#{user.username}
+            div.ml-auto
+                button.btn-follow.btn.btn-outline-primary.btn-sm.btn-pill.font-weight-bold.px-3(type="button" data-user_id=user.id, data-action="follow", data-follow="Seguindo", data-unfollow="Seguir") Seguir
+    a.list-group-item.list-group-item-action(href="/who-to-follow") 
+        span.text-info Mostrar mais

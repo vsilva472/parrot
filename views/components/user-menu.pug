@@ -2,7 +2,7 @@
     button.btn-link.text-secondary.border-0.user-menu-toggler.user-menu-close.cursor-pointer
         i.fas.fa-times
     .p-3
-        img.user-avatar-30.rounded-circle(src="/images/avatars/#{user.avatar}")
+        img.user-avatar-30.rounded-circle(src=`/images/avatars/${user.avatar}`)
         div.mt-1
             b #{user.name}
             div.text-muted @#{user.username}
@@ -12,7 +12,7 @@
             b.d-inline-block.mx-2 #{user.followers} 
             small.text-muted Seguidores
     .list-group.list-group-flush.border-top-0.mt-1
-        a.list-group-item.list-group-item-action.border-top-0.border-bottom-0(href="/profile/#{user.id}")
+        a.list-group-item.list-group-item-action.border-top-0.border-bottom-0(href=`/profile/${user.id}`)
             i.far.fa-user 
             span.d-inline-block.ml-2 Perfil
         a.list-group-item.list-group-item-action.border-top-0.border-bottom-0(href="/notifications")

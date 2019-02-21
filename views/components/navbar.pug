@@ -5,7 +5,7 @@ nav.site-navigation.bg-white
             .col-lg-10.mx-auto
                 .row.h-100
                     .col-lg-5.order-lg-12.d-flex.align-items-center.position-relative
-                        img.user-menu-toggler.rounded-circle.user-avatar-30.ml-lg-auto.cursor-pointer(src="/images/avatars/#{user.avatar}")
+                        img.user-menu-toggler.rounded-circle.user-avatar-30.ml-lg-auto.cursor-pointer(src=`/images/avatars/${user.avatar}`)
                         b.user-menu-toggler.d-none.d-lg-inline-block.mx-2.cursor-pointer #{user.name}
                         i.user-menu-toggler.d-none.d-lg-inline.fas.fa-chevron-down.text-secondary.cursor-pointer
                         include ./user-menu

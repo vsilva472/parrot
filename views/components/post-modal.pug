@@ -2,7 +2,7 @@
   .modal-dialog(role='document')
     .modal-content
       .modal-header
-        img.user-avatar-30.rounded-circle(src="/images/avatars/#{user.avatar}")
+        img.user-avatar-30.rounded-circle(src=`/images/avatars/${user.avatar}`)
         h5.modal-title.ml-2 Postar
         button.close(type='button', data-dismiss='modal', aria-label='Close')
           span(aria-hidden='true') ×

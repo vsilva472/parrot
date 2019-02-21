@@ -3,14 +3,14 @@
 if (!posts.length)
     - cssClass = 'd-none';
     
-div(class="list-group mt-md-3 pt-2 pt-lg-0 mb-3 feed-component #{cssClass}")
+div(class=`list-group mt-md-3 pt-2 pt-lg-0 mb-3 feed-component ${cssClass}`)
     .list-group-item.rounded-0.d-flex.p-3.list-group-header 
         h5.mb-0 Postagens
     - var today = moment();
     for post in posts
         .list-group-item.rounded-0.d-flex.p-3
             div
-                img.user-avatar-40.user-avatar.rounded-circle(src="/images/avatars/#{post.owner_avatar}")
+                img.user-avatar-40.user-avatar.rounded-circle(src=`/images/avatars/${post.owner_avatar}`)
             div.ml-2
                 b.post-user-name #{post.owner_name}
                 span.text-muted.d-inline-block.mx-2.post-user-alias @#{post.owner_alias}
