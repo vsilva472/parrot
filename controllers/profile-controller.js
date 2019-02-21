@@ -4,6 +4,7 @@ const userService     = require( '../services/user-service' );
 const userRepository  = require( '../repositories/user-repository' );
 const postRepository  = require( '../repositories/post-repository' );
 const ImageUploader   = require( '../services/image-uploader-service' );
+const authService       = require( '../services/auth-service' );
 
 exports.show = async ( req, res, next ) => {
   try {
@@ -79,6 +80,9 @@ exports.update = async ( req, res, next ) => {
     if ( avatar ) profileData.avatar  = avatarName;
 
     await userRepository.update( userId, profileData );
+
+    const updatedUser = await userRepository.oneBy( 'id', userId );
+    authService.createSessionFor( updatedUser, req );
 
     res.json({ status: true, data: profileData });
   } 

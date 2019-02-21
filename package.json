@@ -3,7 +3,8 @@
   "version": "0.9.9",
   "private": true,
   "scripts": {
-    "start": "node ./bin/www"
+    "start": "node ./bin/www",
+    "startdev": "set NODE_ENV=development&& set DEV_DB_USERNAME=root&& set DEV_DB_PASSWORD=&& set DEV_DB_NAME=parrot&& set DEV_DB_HOSTNAME=localhost&& node ./bin/www" 
   },
   "engines": {
     "node": "8.11.1"
@@ -17,13 +18,13 @@
     "express-validator": "^5.3.0",
     "html-entities": "^1.2.1",
     "http-errors": "~1.6.2",
-    "jade": "~1.11.0",
     "moment": "^2.22.2",
-    "morgan": "~1.9.0",
+    "morgan": "^1.9.1",
     "mysql2": "^1.6.1",
+    "pug": "^2.0.3",
     "sequelize": "^4.38.0"
   },
   "devDependencies": {
-    "sequelize-cli": "^4.1.0"
+    "sequelize-cli": "^5.4.0"
   }
 }

@@ -35,12 +35,11 @@ exports.create = async (req, res, next) => {
         const postBody      = req.body.post;
         const user_id       = req.session.user.id;
 
-        console.log( postBody );
-
         const post = await postRepository.create( user_id, postBody, image ? filename : false );
         await userRepository.incrementPostsCount( user_id );
 
         res.json({status: true, user: req.session.user, post: post.body});
+        
     }
     catch ( e ) {
         console.log( 'ERROR POST ##############################' );

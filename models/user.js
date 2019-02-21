@@ -21,12 +21,35 @@ module.exports = (sequelize, DataTypes) => {
       }
     },
     password: DataTypes.STRING,
-    avatar: DataTypes.STRING,
-    cover: DataTypes.STRING,
-    posts_count: DataTypes.INTEGER,
-    following_count: DataTypes.INTEGER,
-    followers_count: DataTypes.INTEGER,
-    bio: DataTypes.STRING
+    avatar: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      defaultValue: 'default_avatar.png'
+    },
+    cover: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      defaultValue: 'default_cover.png'
+    },
+    posts_count: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      defaultValue: 0
+    },
+    following_count: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      defaultValue: 0
+    },
+    followers_count: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      defaultValue: 0
+    },
+    bio: {
+      type: DataTypes.STRING,
+      allowNull: true
+    },
   }, {
     hooks: {
       beforeCreate : user => {
@@ -48,15 +71,15 @@ module.exports = (sequelize, DataTypes) => {
     });
 
     User.belongsToMany(models.User, {
-      as: 'Follower',
-      through: 'Followers',
+      as: 'Following',
+      through: models.Follower,
       foreignKey: 'follower_user_id',
       onDelete: 'CASCADE'
     });
 
     User.belongsToMany(models.User, {
       as: 'Followed',
-      through: 'Followers',
+      through: models.Follower,
       foreignKey: 'followed_user_id',
       onDelete: 'CASCADE'
     });

@@ -9,22 +9,22 @@ block content
                     span.fas.fa-crow
                     span.sr-only= title
 
-                include ./components/alert.jade
+                include ./components/alert.pug
                 
                 form(action="/signup", method="post", data-invalid="true", novalidate)
                     fieldset
                         .form-group.text-left
                             label.sr-only(for="name") Nome
-                            input.form-control(type="text", name="name", placeholder="Seu Nome", id="name", value="#{data.name}" data-validator="name")
+                            input.form-control(type="text", name="name", placeholder="Seu Nome", id="name", value=data.name data-validator="name")
                         .form-group.text-left
                             label.sr-only(for="email") Email
-                            input.form-control(type="email", name="email", placeholder="Email", id="email", value="#{data.email}", data-validator="email")
+                            input.form-control(type="email", name="email", placeholder="Email", id="email", value=data.email, data-validator="email")
                         .form-group.text-left                        
                             label.sr-only(for="password") Senha
-                            input.form-control(type="password", name="password", placeholder="Senha", id="password", value="#{data.password}", data-validator="password")
+                            input.form-control(type="password", name="password", placeholder="Senha", id="password", value=data.password, data-validator="password")
                             .form-group.text-left                        
                             label.sr-only(for="password_conf") Confirma a Senha
-                            input.form-control(type="password", name="password_conf", placeholder="Repita a Senha", id="password_conf", value="#{data.password_conf}", data-validator="equals", data-selector="#password")
+                            input.form-control(type="password", name="password_conf", placeholder="Repita a Senha", id="password_conf", value=data.password_conf, data-validator="equals", data-selector="#password")
                         div.mb-5.text-right
                             button.btn.btn-primary.btn-block(type="submit", data-loading="Aguarde..." data-text="Cadastrar") Cadastrar
 

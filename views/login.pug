@@ -9,18 +9,18 @@ block content
                     span.fas.fa-crow
                     span.sr-only= title
 
-                include ./components/alert.jade
+                include ./components/alert.pug
                 
                 form(action="/", method="post", data-invalid="true", novalidate)
                     fieldset
                         .form-group.text-left
                             label.sr-only(for="email") Email
-                            input.form-control(type="email", name="email", placeholder="Email", id="email", value="#{data.email}", data-validator="email")
+                            input.form-control(type="email", name="email", placeholder="Email", id="email", value=data.email, data-validator="email")
                         .form-group.text-left                        
                             label.sr-only(for="senha") Senha
-                            input.form-control(type="password", name="password", placeholder="Senha", value="#{data.password}", data-validator="password")
+                            input.form-control(type="password", name="password", placeholder="Senha", value=data.password, data-validator="password")
                         div.mb-5
-                            input(type="hidden", name="redir", value="#{redir}")
+                            input(type="hidden", name="redir", value=redir)
                             button.btn.btn-primary.btn-block(type="submit", data-loading="Aguarde..." data-text="Entrar") Entrar
 
                         p.form-text.text-muted #[a(href="/password-recover") Recuperar senha] - #[a(href="/signup") Cadastrar]
